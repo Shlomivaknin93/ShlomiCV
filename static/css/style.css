@@ -1,0 +1,270 @@
+/* הגדרות עבור כפתורי הפיקסלים */
+.pixel-controls {
+    display: flex;
+    justify-content: flex-end; /* ממקם את הכפתורים בצד ימין */
+    gap: 10px;
+    position: absolute; /* מאפשר מיקום יחסית למסך */
+    top: 10px; /* מיקום מלמעלה */
+    right: 10px; /* מיקום מצד ימין */
+}
+
+.pixel-button {
+    font-family: 'MyCustomFont'; /* פונטים בסגנון פיקסל */
+    background-color: #000;
+    color: #fff;
+    border: 3px solid #fff;
+    padding: 10px 20px;
+    cursor: pointer;
+}
+
+.pixel-button:active {
+    box-shadow: none;
+    transform: translateY(2px);
+}
+
+/* הטמעת גופן מותאם אישית */
+@font-face {
+    font-family: 'MyCustomFont';
+    src: url('../fonts/STANB___.ttf') format('truetype');
+}
+
+/* איפוס של מרווחים עבור body ו-html */
+html, body {
+    margin: 0;
+    padding: 0;
+    height: 100%;
+}
+
+/* סגנונות כלליים עבור גוף הדף */
+body {
+    font-family: 'MyCustomFont', sans-serif;
+    background-color: black;
+    margin: 0;
+    padding: 0;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* קונטיינר ממורכז עם Flexbox */
+.centered-container {
+    display: flex;
+    flex-direction: column; /* כיוון אנכי */
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    margin-top: 50vh; /* מוסיף מרווח עליון של 50% מגובה הדף */
+}
+
+/* סגנון עבור כותרות h1 */
+h1 {
+    font-size: 45px; /* גודל גופן עבור כותרות h1 */
+    color: white;
+}
+
+.centered-text h1 {
+    display: inline-block;
+    text-align: right;
+}
+
+/* סגנון עבור קישורים בצבע שחור */
+.black-link {
+    color: white;
+    text-decoration: none; /* מסיר קו תחתון */
+}
+
+/* סגנון עבור כפתור */
+.button {
+    display: inline-block;
+    padding: 10px 20px;
+    font-family: 'MyCustomFont', sans-serif;
+    text-decoration: none;
+    color: white;
+    background-color: transparent;
+    margin-top: 20px;
+    transition: background-color 0.3s ease;
+    position: absolute;
+    top: 5px;
+    left: 10px;
+    font-size: 38px;
+    cursor: pointer;
+}
+
+.button:hover {
+    background-color: darkgray;
+}
+
+/* סגנון לכפתור במיקום עליון-שמאלי */
+.top-left-button {
+    position: absolute;
+    top: 10px;
+    left: 10px;
+}
+
+/* סגנון עבור תמונות שמופיעות עם מעבר עכבר */
+.image1, .image2 {
+    display: none; /* הסתרת התמונה כברירת מחדל */
+    position: absolute;
+    z-index: 10; /* להביא את התמונה מעל יתר התוכן */
+    width: 190px; /* קביעת רוחב התמונה */
+    height: auto; /* שמירת היחס המקורי של התמונה */
+}
+
+.image1 {
+    top: 195px; /* התאמת המרחק של התמונה מהטקסט */
+    left: 800px; /* התאמת המיקום לצד השם */
+}
+
+.image2 {
+    top: 550px; /* התאמת המרחק של התמונה מהטקסט */
+    left: 600px; /* התאמת המיקום לצד השם */
+}
+
+.hover-container:hover .image1,
+.hover-container:hover .image2 {
+    display: block; /* הצגת התמונה כשעומדים עם העכבר על הטקסט */
+}
+
+/* אנימציית ריצוד בצבעים */
+.ripple-effect:hover {
+    animation: colorChange 0.1s infinite;
+}
+
+/* הגדרות לאנימציה */
+@keyframes colorChange {
+    0% { background-color: #FF0000; } /* אדום */
+    25% { background-color: #00FF00; } /* ירוק */
+    50% { background-color: #0000FF; } /* כחול */
+    75% { background-color: #FFFF00; } /* צהוב */
+    100% { background-color: #FF00FF; } /* מג'נטה */
+}
+
+/* סגנון עבור הכותרת הראשית */
+.header {
+    position: fixed; /* קיבוע המיקום של הכותרת */
+    top: 20px;
+    left: 50%;
+    transform: translateX(-50%); /* שמירה על המרכז */
+    z-index: 1000; /* כדי להציג את הכותרת מעל התוכן */
+    text-align: center;
+}
+
+/* תוכן ניתן לגלילה */
+.scrollable-content {
+    margin-top: 80px; /* מרחק מתחת לכותרת */
+    max-height: calc(200vh - 300px); /* גובה מקסימלי */
+    overflow-y: auto; /* גלילה אנכית */
+    padding: 20px;
+}
+
+
+/* סגנון עבור הקישור של פלייליסטים */
+.playlist-link {
+    color: gray; /* צבע אפור */
+    text-decoration: none; /* מסיר קו תחתון */
+}
+
+.playlist-link:hover {
+    color: darkgray; /* שינוי הצבע במעבר עכבר */
+}
+
+/* סגנון עבור כפתורי המוזיקה */
+.music-button-left, .music-button-right {
+    background: none;
+    border: none;
+    padding: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.1s ease, box-shadow 0.1s ease;
+    position: absolute;
+}
+
+.music-button-left {
+    top: 10px;
+    right: 80px;
+}
+
+.music-button-right {
+    top: 10px;
+    right: 50px;
+}
+
+.music-button-left img, .music-button-right img {
+    width: 40px;
+    height: 40px;
+}
+
+/* אפקט של לחיצה (שינוי גודל וצל) */
+.music-button-left:active, .music-button-right:active {
+    transform: scale(0.75); /* מקטין את הכפתור ב-5% בזמן הלחיצה */
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2); /* מוסיף צל קל */
+    background-color: rgba(0, 0, 0, 0.1); /* מוסיף צבע רקע בעת לחיצה */
+}
+
+
+/* וידאו כרקע */
+#background-video {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    z-index: -1;
+}
+
+/* GIF רקע */
+#background-gif {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: url('static/images/static.gif') no-repeat center center;
+    background-size: cover;
+    z-index: -1;
+    display: none; /* מוסתר בהתחלה */
+}
+
+/* סגנון עבור כפתור tv */
+.tv-button {
+    font-family: 'MyCustomFont'; /* פונטים בסגנון פיקסל */
+    padding: 2px 2px;
+    cursor: pointer;
+    position: absolute;
+    top: 14px;
+    right: 10px;
+    z-index: 2;
+    width: 40px; /* רוחב הכפתור */
+    height: auto; /* שומר על יחס הגובה לפי הרוחב */
+}
+
+
+.tv-button:active {
+    box-shadow: none;
+    transform: translateY(2px);
+}
+
+/* תוכן */
+#content {
+    position: relative;
+    z-index: 1;
+    color: white;
+    text-align: center;
+    padding: 50px;
+}
+
+/* סגנון עבור הקישור של CV */
+.cv-link {
+    color: white; /* צבע אפור */
+    text-decoration: none; /* מסיר קו תחתון */
+}
+
+.cv-link:hover {
+    color: darkgray; /* שינוי הצבע במעבר עכבר */
+}
+
+
+
+
+
