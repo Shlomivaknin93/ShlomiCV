@@ -1,2 +1,0 @@
-gunicorn pythonProject9.main:app
-
