@@ -1,0 +1,291 @@
+/* הגדרות עבור כפתורי הפיקסלים */
+.pixel-controls {
+    display: flex;
+    justify-content: flex-end; /* ממקם את הכפתורים בצד ימין */
+    gap: 10px;
+    position: absolute; /* מאפשר מיקום יחסית למסך */
+    top: 10px;
+    right: 10px;
+    z-index: 10; /* יופיע מעל יתר התוכן */
+}
+
+.pixel-button {
+    font-family: 'MyCustomFont'; /* פונטים בסגנון פיקסל */
+    background-color: #000;
+    color: #fff;
+    border: 3px solid #fff;
+    padding: 10px 20px;
+    cursor: pointer;
+}
+
+.pixel-button:active {
+    box-shadow: none;
+    transform: translateY(2px);
+}
+
+/* הטמעת גופן מותאם אישית */
+@font-face {
+    font-family: 'MyCustomFont';
+    src: url('../fonts/STANB___.ttf') format('truetype');
+}
+
+/* איפוס של מרווחים עבור body ו-html */
+html, body {
+    margin: 0;
+    padding: 0;
+    height: 100%;
+}
+
+/* סגנונות כלליים עבור גוף הדף */
+body {
+    font-family: 'MyCustomFont', sans-serif;
+    background-color: black;
+    margin: 0;
+    padding: 0;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* קונטיינר ממורכז עם Flexbox */
+.centered-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    margin-top: 50vh;
+}
+
+/* סגנון עבור כותרות h1 */
+h1 {
+    font-size: 45px;
+    color: white;
+}
+
+.centered-text h1 {
+    display: inline-block;
+    text-align: right;
+}
+
+/* סגנון עבור קישורים */
+.black-link {
+    color: white;
+    text-decoration: none;
+}
+
+.button {
+    display: inline-block;
+    padding: 10px 20px;
+    font-family: 'MyCustomFont', sans-serif;
+    color: white;
+    background-color: transparent;
+    font-size: 2vw; /* משתנה לפי גודל המסך */
+    cursor: pointer;
+    top: 5vh;
+    left: 5vw;
+    position: absolute;
+    transition: background-color 0.3s ease;
+}
+
+.button:hover {
+    background-color: darkgray;
+}
+
+/* סגנון לכפתור במיקום עליון-שמאלי */
+.top-left-button {
+    position: absolute;
+    top: 10px;
+    left: 10px;
+}
+
+/* סגנון עבור תמונות שמופיעות עם מעבר עכבר */
+.image1, .image2 {
+    display: none;
+    position: absolute;
+    z-index: 10;
+    width: 190px;
+    height: auto;
+}
+
+.image1 {
+    top: 195px;
+    left: 800px;
+}
+
+.image2 {
+    top: 550px;
+    left: 600px;
+}
+
+.hover-container:hover .image1,
+.hover-container:hover .image2 {
+    display: block;
+}
+
+/* אנימציית ריצוד בצבעים */
+.ripple-effect:hover {
+    animation: colorChange 0.1s infinite;
+}
+
+@keyframes colorChange {
+    0% { background-color: #FF0000; }
+    25% { background-color: #00FF00; }
+    50% { background-color: #0000FF; }
+    75% { background-color: #FFFF00; }
+    100% { background-color: #FF00FF; }
+}
+
+/* סגנון עבור הכותרת הראשית */
+.header {
+    position: fixed;
+    top: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 100%;
+    z-index: 1000;
+    text-align: center;
+}
+
+/* תוכן ניתן לגלילה */
+.scrollable-content {
+    margin-top: 80px;
+    max-height: calc(200vh - 300px);
+    overflow-y: auto;
+    padding: 20px;
+}
+
+/* סגנון עבור כפתורי המוזיקה */
+.music-button-left, .music-button-right {
+    background: none;
+    border: none;
+    padding: 10px; /* גודל קבוע */
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.1s ease, box-shadow 0.1s ease;
+    position: absolute;
+    width: 50px; /* גודל קבוע */
+    height: 50px; /* גובה קבוע */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.music-button-left {
+    top: 16px;
+    right: 100px; /* מיקום קבוע */
+}
+
+.music-button-right {
+    top: 16px;
+    right: 70px; /* מיקום קבוע */
+}
+
+.music-button-left img, .music-button-right img {
+    width: 40px; /* גודל אייקון קבוע */
+    height: 40px;
+}
+
+.music-button-left:active, .music-button-right:active {
+    transform: scale(0.75);
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+    background-color: rgba(0, 0, 0, 0.1);
+}
+
+
+/* וידאו כרקע */
+#background-video {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    object-fit: cover;
+    z-index: -1;
+}
+
+/* GIF כרקע */
+#background-gif {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background: url('static/images/static.gif') no-repeat center center;
+    background-size: cover;
+    z-index: -1;
+    display: none;
+}
+
+/* סגנון עבור כפתור tv */
+.tv-button {
+    background: none;
+    border: none;
+    padding: 10px; /* גודל קבוע */
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.1s ease, box-shadow 0.1s ease;
+    position: absolute;
+    width: 75px; /* גודל קבוע */
+    height: 75px; /* גובה קבוע */
+    top: -8px; /* מיקום יחסי קבוע */
+    right: 2px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.tv-button:active {
+    transform: scale(0.75);
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+    background-color: rgba(0, 0, 0, 0.1);
+}
+
+
+/* תוכן */
+#content {
+    position: relative;
+    z-index: 1;
+    color: white;
+    text-align: center;
+    padding: 50px;
+}
+
+/* סגנון עבור קישור CV */
+.cv-link {
+    color: white;
+    text-decoration: none;
+}
+
+.cv-link:hover {
+    color: darkgray;
+}
+
+/* מדיה קווריס עבור תצוגות קטנות */
+@media (max-width: 768px) {
+    .button {
+        font-size: 5vw;
+        padding: 8px 16px;
+    }
+
+    .header h1 {
+        font-size: 6vw;
+    }
+
+    .tv-button {
+        width: 6vw;
+    }
+}
+
+/* כפתור לקישור הפלייליסט */
+
+.playlist-link {
+    font-family: 'MyCustomFont', sans-serif; /* הגדרת הגופן המותאם אישית */
+    color: lightcoral;
+    text-decoration: none; /* הסרת הקו התחתון */
+    font-size: 45px; /* ניתן לשנות לפי הצורך */
+    padding: 5px 10px; /* התאמת רווחים בהתאם */
+}
+
+.playlist-link:hover {
+    color: darkgray; /* צבע משתנה בעת מעבר עכבר */
+}
